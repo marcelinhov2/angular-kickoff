@@ -23,7 +23,7 @@ paths =
   index:     'src/index.jade'
   fonts:     'src/fonts/**/*'
   images:    'src/images/**/*'
-  styles:    'src/styles/**/*.styl'
+  styles:    'src/styles/app.styl'
   scripts:   'src/scripts/**/*.coffee'
   partials:  'src/partials/**/*.jade'
 
@@ -51,6 +51,7 @@ gulp.task 'move_bower', (cb) ->
 gulp.task 'styles', ->
   gulp.src paths.styles
     .pipe stylus()
+    .on('error', console.log)
     .pipe gulp.dest 'app/styles'
     .pipe connect.reload()
 

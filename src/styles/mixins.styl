@@ -1,0 +1,22 @@
+// :copyright: Copyright 2012 Martin Pengelly-Phillips
+// :license: See LICENSE.txt.
+
+font-shorthand(size=baseFontSize, weight=normal, lineHeight=baseLineHeight) {
+    font-size: size;
+    font-weight: weight;
+    line-height: lineHeight;
+}
+
+gradientBar(primaryColor, secondaryColor, textColor=#fff, textShadow=0 -1px 0 rgba(0,0,0,.25)) {
+    color: textColor;
+    text-shadow: textShadow;
+    background-color: secondaryColor;
+    background-image: linear-gradient(top, primaryColor, secondaryColor);
+    background-repeat: repeat-x;
+    border-color: secondaryColor secondaryColor darken(secondaryColor, 15%);
+    border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fade-in(rgba(0,0,0,.1), 15%);
+}
+
+buttonBackground(startColor, endColor, textColor=#fff, textShadow=0 -1px 0 rgba(0,0,0,.25)) {
+    gradientBar(startColor, endColor, textColor, textShadow);
+}
