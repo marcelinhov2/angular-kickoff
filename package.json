@@ -3,13 +3,8 @@
   "version": "0.0.0",
   "description": "webapp",
   "private": true,
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
-    "test": "karma start test/karma.conf.js",
     "postinstall": "bower install",
-    "protractor": "protractor test/protractor-conf.js"
   },
   "devDependencies": {
     "bower": "^1.3.5",
@@ -35,9 +30,7 @@
     "run-sequence": "^0.3.6",
     "rimraf": "^2.2.6",
     "jade": "^1.3.1",
-    "karma": "^0.12.16",
     "open": "0.0.5",
-    "protractor": "^0.24.2",
     "stylus": "^0.46.3"
   }
 }
