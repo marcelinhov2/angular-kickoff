@@ -13,7 +13,7 @@ inject     = require 'gulp-inject'
 connect    = require 'gulp-connect'
 imagemin   = require 'gulp-imagemin'
 sourcemaps = require 'gulp-sourcemaps'
-bowerFiles = require 'gulp-bower-files'
+bowerFiles = require 'main-bower-files'
 rimraf     = require 'rimraf'
 addsrc     = require 'gulp-add-src'
 classify   = require 'gulp-ng-classify'
@@ -72,18 +72,21 @@ gulp.task 'partials', ->
     .pipe gulp.dest 'app/partials'
 
 #Compile index.jade, inject compiled stylesheets, inject compiled scripts, inject bower packages
-gulp.task 'index', ['clean', 'scripts', 'styles', 'partials', 'images'], ->
+gulp.task 'index', ['clean', 'scripts', 'concat_bower', 'styles', 'partials', 'images'], ->
   gulp.src paths.index
     .pipe jade pretty: yes
     .pipe inject(es.merge(
-      bowerFiles read: no
-    ,
       gulp.src './app/styles/**/*.css', read: no
     ,
       gulp.src './app/scripts/**/*.js', read: no
     ), ignorePath: '/app')
     .pipe gulp.dest 'app/'
     .pipe connect.reload()
+
+gulp.task "concat_bower", ->
+  gulp.src bowerFiles()
+    .pipe(concat( 'dependencies.js') )
+    .pipe gulp.dest "app/scripts"
 
 # Launch server and open app in default browser
 gulp.task 'serve', ['compile', 'watch'], ->
