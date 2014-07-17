@@ -1,0 +1,25 @@
+{
+  "name": "webapp",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular-mocks": "~1.2.18",
+    "angular-scenario": "~1.2.18"
+  },
+  "dependencies": {
+    "angular": "~1.2.18",
+    "angular-route": "~1.2.18",
+    "angular-loader": "~1.2.18",
+    "angular-resource": "~1.2.18",
+    "angular-animate": "~1.2.18",
+    "angular-cookies": "~1.2.18"
+  }
+}
