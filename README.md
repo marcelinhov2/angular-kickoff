@@ -1,6 +1,6 @@
 #Angular Kickoff Seed
-##based on Angular hipster seed: https://github.com/t3chnoboy/angular-hipster-seed
 AngularJS application boilerplate for Ng-Classify lovers
+##based on: https://github.com/t3chnoboy/angular-hipster-seed
 
 ##Features
 * Auto create/delete of src files inside app folder
