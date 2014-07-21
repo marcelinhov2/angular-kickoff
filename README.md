@@ -116,3 +116,8 @@ angular-kickoff
   └── styles
       └── style.css        # minified and concatenated styles
 ```
+
+##TODO's
+* SourceMaps
+* File Generators
+* Tests
