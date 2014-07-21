@@ -1,4 +1,5 @@
-#Angular Kickoff Seed ( based on Angular hipster seed: https://github.com/t3chnoboy/angular-hipster-seed )
+#Angular Kickoff Seed
+##based on Angular hipster seed: https://github.com/t3chnoboy/angular-hipster-seed
 AngularJS application boilerplate for Ng-Classify lovers
 
 ##Features
