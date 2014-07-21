@@ -36,9 +36,7 @@ paths =
 gulp.task 'scripts', ['move_bower'], ->
   gulp.src paths.scripts
     .pipe do classify
-    .pipe do sourcemaps.init
     .pipe coffee bare: false
-    .pipe do sourcemaps.write
     .pipe gulp.dest 'app/scripts'
 
 gulp.task 'move_bower', (cb) ->
