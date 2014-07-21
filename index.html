@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Angular-kickoff by marcelinhov2</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Angular-kickoff</h1>
+        <h2></h2>
+
+        <section id="downloads">
+          <a href="https://github.com/marcelinhov2/angular-kickoff/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/marcelinhov2/angular-kickoff/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/marcelinhov2/angular-kickoff" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a name="angular-kickoff-seed" class="anchor" href="#angular-kickoff-seed"><span class="octicon octicon-link"></span></a>Angular Kickoff Seed</h1>
+
+<p>AngularJS application boilerplate for Ng-Classify lovers</p>
+
+<h2>
+<a name="based-on-httpsgithubcomt3chnoboyangular-hipster-seed" class="anchor" href="#based-on-httpsgithubcomt3chnoboyangular-hipster-seed"><span class="octicon octicon-link"></span></a>based on: <a href="https://github.com/t3chnoboy/angular-hipster-seed">https://github.com/t3chnoboy/angular-hipster-seed</a>
+</h2>
+
+<h2>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>Auto create/delete of src files inside app folder</li>
+<li>Jade instead of html</li>
+<li>Coffee-Script instead of JS</li>
+<li>Ng-Classify for better AngularJs Declarations ( <a href="https://github.com/CaryLandholt/ng-classify">https://github.com/CaryLandholt/ng-classify</a> )</li>
+<li>Stylus instead of css</li>
+<li>Automatic compilation</li>
+<li>Livereload without any plugins</li>
+<li>Production build with optimizations</li>
+<li>Automatic bower components injection</li>
+<li>Automatic scripts and stylesheets injection</li>
+</ul><h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Clone repo using git</p>
+
+<div class="highlight highlight-sh"><pre>git clone https://github.com/marcelinhov2/angular-kickoff.git
+<span class="nb">cd </span>angular-kickoff
+</pre></div>
+
+<p>Install dependencies</p>
+
+<div class="highlight highlight-sh"><pre>npm install
+bower install
+</pre></div>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<h3>
+<a name="running-the-app-during-development" class="anchor" href="#running-the-app-during-development"><span class="octicon octicon-link"></span></a>Running the App during Development</h3>
+
+<p>This command automatically compiles coffee, jade and stylus, injects bower components, generates source maps, starts livereload server and opens your app in the browser.</p>
+
+<div class="highlight highlight-sh"><pre>gulp serve
+</pre></div>
+
+<h3>
+<a name="compiling-app-for-development" class="anchor" href="#compiling-app-for-development"><span class="octicon octicon-link"></span></a>Compiling app for development</h3>
+
+<p>This command compiles project and generates source maps. Output goes to <code>sh app/</code> folder</p>
+
+<pre><code>gulp compile
+</code></pre>
+
+<h3>
+<a name="building-the-app-for-production" class="anchor" href="#building-the-app-for-production"><span class="octicon octicon-link"></span></a>Building the App for Production</h3>
+
+<p>This command compiles project and optimizes it for production. Output goes to <code>sh dist/</code> folder</p>
+
+<pre><code>gulp build
+</code></pre>
+
+<h2>
+<a name="directory-layout" class="anchor" href="#directory-layout"><span class="octicon octicon-link"></span></a>Directory layout</h2>
+
+<h3>
+<a name="source" class="anchor" href="#source"><span class="octicon octicon-link"></span></a>Source</h3>
+
+<div class="highlight highlight-sh"><pre>angular-kickoff
+└── src
+    ├── images               <span class="c"># image files</span>
+    ├── index.jade           <span class="c"># app layout file (the main jade template file of the app)</span>
+    ├── partials             <span class="c"># angular view partials (partial jade templates)</span>
+    │   ├── directives       <span class="c"># partial directives</span>
+    │   └── views            <span class="c"># partial views</span>
+    ├── scripts              <span class="c"># coffeescripts</span>
+    │   ├── main.coffee      <span class="c"># application</span>
+    │   ├── controllers      <span class="c"># application controllers</span>
+    │   ├── directives       <span class="c"># application directives</span>
+    │   ├── factories        <span class="c"># application factories</span>
+    │   ├── filters          <span class="c"># application filters</span>
+    │   └── services         <span class="c"># application services</span>
+    └── styles               <span class="c"># stylus stylesheets</span>
+        ├── animation.styl   <span class="c"># animation classes ( http://daneden.github.io/animate.css/ )</span>
+        ├── app.styl         <span class="c"># this file, import all the others files that you create</span>
+        ├── colors.styl      <span class="c"># here goes your colors vars</span>
+        ├── fonts.styl       <span class="c"># here goes your font-face declaration</span>
+        ├── mixins.styl      <span class="c"># here goes your mixins</span>
+        ├── reset.styl       <span class="c"># here goes your reset styles ( http://meyerweb.com/eric/tools/css/reset/ )</span>
+        └── transitions.styl <span class="c"># here goes your ng-view transitions ( https://github.com/mgechev/angular-transitions )</span>
+</pre></div>
+
+<h3>
+<a name="development-build" class="anchor" href="#development-build"><span class="octicon octicon-link"></span></a>Development build</h3>
+
+<div class="highlight highlight-sh"><pre>angular-kickoff
+ app                      <span class="c"># development build</span>
+  ├── bower_components
+  ├── fonts
+  ├── images
+  ├── index.html          <span class="c"># compiled app layout</span>
+  ├── partials            <span class="c"># compiled partials</span>
+  │   ├── directives
+  │   └── views
+  ├── scripts             <span class="c"># compiled scripts with source maps</span>
+  │   ├── main.js
+  │   ├── dependencies.js <span class="c"># bower_components compiled files</span>
+  │   ├── controllers
+  │   ├── directives
+  │   ├── factories
+  │   ├── filters
+  │   └── services
+  └── styles               <span class="c"># compiled stylesheets</span>
+      └── app.css
+</pre></div>
+
+<h3>
+<a name="production-build" class="anchor" href="#production-build"><span class="octicon octicon-link"></span></a>Production build</h3>
+
+<div class="highlight highlight-sh"><pre> dist                     <span class="c"># production build</span>
+  ├── bower_components
+  ├── fonts
+  ├── images               <span class="c"># optimized images</span>
+  ├── index.html           <span class="c"># minified app layout</span>
+  ├── partials             <span class="c"># minified partials</span>
+  │   ├── directives
+  │   └── views
+  ├── scripts
+  │   ├── dependencies.js  <span class="c"># minified and concatenated bower_components</span>
+  │   └── main.js          <span class="c"># minified and concatenated javascripts</span>
+  └── styles
+      └── style.css        <span class="c"># minified and concatenated styles</span>
+</pre></div>
+
+<h2>
+<a name="todos" class="anchor" href="#todos"><span class="octicon octicon-link"></span></a>TODO's</h2>
+
+<ul>
+<li>SourceMaps</li>
+<li>File Generators</li>
+<li>Tests</li>
+</ul>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
