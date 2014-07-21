@@ -2,11 +2,15 @@ doctype html
 
 html(lang="en")
   head
-    title My index
+    meta(charset='utf-8')
+    title Newsletter Landing Page
     // inject:css 
     // endinject 
-  body(ng-app="app")
-    ng-view
+  body(ng-app="app" ng-controller="appController")
+    #wrap
+      header-directive
+      ng-view(id="ng_view" class="at-view-flip-in-horizontal at-view-flip-out-horizontal")
+      footer-directive
 
     // inject:js 
     // endinject 
