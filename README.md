@@ -6,7 +6,7 @@ AngularJS application boilerplate for Ng-Classify lovers
 * Auto create/delete of src files inside app folder
 * Jade instead of html
 * Coffee-Script instead of JS
-* Ng-Classify for better AngularJs Declarations
+* Ng-Classify for better AngularJs Declarations ( https://github.com/CaryLandholt/ng-classify )
 * Stylus instead of css
 * Automatic compilation
 * Livereload without any plugins
