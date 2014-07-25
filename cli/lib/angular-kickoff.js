@@ -1,9 +1,11 @@
 (function() {
-  var AngularKickoff, CreateModule, CreatePartial;
+  var AngularKickoff, CreateModule, CreatePartial, CreateStyle;
 
   CreateModule = require('./commands/create_modules');
 
   CreatePartial = require('./commands/create_partials');
+
+  CreateStyle = require('./commands/create_styles');
 
   AngularKickoff = (function() {
     function AngularKickoff() {
@@ -13,6 +15,9 @@
       }
       if (program.generate === "partial") {
         return new CreatePartial;
+      }
+      if (program.generate === "style") {
+        return new CreateStyle;
       }
       return console.log("Not exists");
     }
