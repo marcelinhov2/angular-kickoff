@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "bower install"
   },
-  "devDependencies": {
+  "dependencies": {
     "bower": "^1.3.5",
     "coffee-script": "^1.7.1",
     "event-stream": "^3.1.5",
@@ -31,6 +31,7 @@
     "rimraf": "^2.2.6",
     "jade": "^1.3.1",
     "open": "0.0.5",
-    "stylus": "^0.46.3"
+    "stylus": "^0.46.3",
+    "commander": "2.3.0"
   }
 }

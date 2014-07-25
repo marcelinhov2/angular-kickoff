@@ -1,4 +1,6 @@
 #!/usr/bin/env node
 
 path = require( 'path' );
+fs = require('fs');
+program = require('commander');
 require(path.join( __dirname, '..', 'cli', 'lib', 'angular-kickoff.js' ));

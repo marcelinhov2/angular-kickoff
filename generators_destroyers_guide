@@ -7,7 +7,6 @@ Genarators ( using with -g arg )
 
   - Module Generators - Based on Ng-Classify Templates
     Examples:
-      "angular-kickoff -g module app/app", 
       "angular-kickoff -g module animation/my-animation", 
       "angular-kickoff -g module config/routes", 
       "angular-kickoff -g module constant/http-status-code", 
