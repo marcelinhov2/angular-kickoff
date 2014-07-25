@@ -85,16 +85,6 @@ gulp.task "concat_bower", ->
     .pipe(concat( 'dependencies.js') )
     .pipe gulp.dest "app/scripts"
 
-# Launch server and open app in default browser
-gulp.task 'serve', ['compile', 'watch'], ->
-  connect.server
-    port       : 1337
-    root       : 'app'
-    livereload : yes
-    fallback   : 'app/index.html'
-
-  open 'http://localhost:1337'
-
 # Clean development build folder
 gulp.task "clean", (cb) ->
   rimraf.sync "./app"
