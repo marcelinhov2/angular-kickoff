@@ -9,20 +9,25 @@
 
   CreateModule = (function() {
     function CreateModule() {
-      var folder_name, module_name, name, values;
+      var file_name, folder_name, module_name, name, values;
       values = program.args[0].split("/");
       module_name = Utils.lowercase(values[0]);
       folder_name = Utils.pluralize(values[0]);
       name = Utils.lowercase(values[1]);
+      file_name = "" + folder_name + "/" + name + "_" + module_name + ".coffee";
+      fs.exists(path.join(scripts_folder, file_name), function(exists) {
+        if (exists) {
+          console.log("File already exists.");
+          return process.exit(0);
+        }
+      });
       fs.readFile(path.join(templates_folder, "/modules"), 'utf8', (function(_this) {
         return function(err, data) {
-          var file_name;
           if (err) {
             throw err;
           }
           data = data.replace("~NAME", Utils.camelize(name));
           data = data.replace("~MODULE", Utils.camelize(module_name));
-          file_name = "" + folder_name + "/" + name + "_" + module_name + ".coffee";
           fs.writeFile(path.join(scripts_folder, file_name), data, 'utf8', function(err) {});
           if (err) {
             throw err;
