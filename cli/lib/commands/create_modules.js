@@ -32,6 +32,7 @@
           if (err) {
             throw err;
           }
+          return console.log("File created succesfully.");
         };
       })(this));
     }

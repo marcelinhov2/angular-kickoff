@@ -1,7 +1,9 @@
 (function() {
-  var AngularKickoff, CreateModule;
+  var AngularKickoff, CreateModule, CreatePartial;
 
   CreateModule = require('./commands/create_modules');
+
+  CreatePartial = require('./commands/create_partials');
 
   AngularKickoff = (function() {
     function AngularKickoff() {
@@ -12,6 +14,7 @@
       if (program.generate === "partial") {
         return new CreatePartial;
       }
+      return console.log("Not exists");
     }
 
     return AngularKickoff;

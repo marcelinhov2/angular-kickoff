@@ -1,4 +1,5 @@
 CreateModule = require './commands/create_modules'
+CreatePartial = require './commands/create_partials'
 
 class AngularKickoff
 	constructor:() ->
@@ -9,5 +10,6 @@ class AngularKickoff
 		
 		return new CreateModule if program.generate == "module"
 		return new CreatePartial if program.generate == "partial"
+		return console.log "Not exists"
 
 module.exports = new AngularKickoff
