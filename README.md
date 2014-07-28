@@ -7,7 +7,7 @@ __inspirated in:__ https://github.com/t3chnoboy/angular-hipster-seed
 
 
 ##Features
-* CLI to generate and destroy modules, styles and partials;
+* CLI to generate and destroy modules, styles and partials ( Contribution of: https://github.com/viniciuszago );
 * Auto create/delete of src files inside app folder;
 * Jade instead of html;
 * Coffee-Script instead of JS;
