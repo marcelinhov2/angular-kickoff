@@ -1,6 +1,7 @@
 #Angular Kickoff Seed
 AngularJS application boilerplate for Ng-Classify lovers
-based on: https://github.com/t3chnoboy/angular-hipster-seed
+
+__based on:__ https://github.com/t3chnoboy/angular-hipster-seed
 
 ##Features
 * CLI to generate and destroy modules, styles and partials;
