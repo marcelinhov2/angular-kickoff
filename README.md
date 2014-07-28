@@ -35,10 +35,10 @@ Example of how to use the Command Line Interface of the seed:
 
 __Options:__
 ```sh
--h, --help                       output usage information
--V, --version                    output the version number
--g, --generate <option> [value]  Generate files
--d, --destroy <option> [value]   Generate files
+-h, --help                       # Output usage information
+-V, --version                    # Output the version number
+-g, --generate <option> [value]  # Generate files
+-d, --destroy <option> [value]   # Generate files
 ```
 
 __Ng-Classify Modules Available (module_name):__ 
