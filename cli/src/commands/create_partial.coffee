@@ -14,6 +14,7 @@ class CreatePartial
 			if exists
 				console.log("File already exists.")
 				process.exit(0)
+		
 		fs.exists path.join(partials_folder, folder_name), (exists) -> 
 			if !exists
 				fs.mkdir path.join(partials_folder, folder_name), '755'
