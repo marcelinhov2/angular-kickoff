@@ -1,13 +1,13 @@
 #Angular Kickoff Seed
 AngularJS application boilerplate for Ng-Classify lovers
 
-__based on:__ https://github.com/CaryLandholt/ng-classify
+__based on:__ [ng-classify](https://github.com/CaryLandholt/ng-classify)
 
-__inspirated in:__ https://github.com/t3chnoboy/angular-hipster-seed
+__inspirated in:__ [angular-hipster-seed](https://github.com/t3chnoboy/angular-hipster-seed)
 
 
 ##Features
-* CLI to generate and destroy modules, styles and partials ( Contribution of: https://github.com/viniciuszago );
+* CLI to generate and destroy modules, styles and partials ( Contribution of: [viniciuszago](https://github.com/viniciuszago) );
 * Auto create/delete of src files inside app folder;
 * Jade instead of html;
 * Coffee-Script instead of JS;
@@ -159,5 +159,4 @@ angular-kickoff
 ```
 
 ##TODO's
-* File Generators
 * Tests
