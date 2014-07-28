@@ -3,16 +3,17 @@ AngularJS application boilerplate for Ng-Classify lovers
 ##based on: https://github.com/t3chnoboy/angular-hipster-seed
 
 ##Features
-* Auto create/delete of src files inside app folder
-* Jade instead of html
-* Coffee-Script instead of JS
-* Ng-Classify for better AngularJs Declarations ( https://github.com/CaryLandholt/ng-classify )
-* Stylus instead of css
-* Automatic compilation
-* Livereload without any plugins
-* Production build with optimizations
-* Automatic bower components injection
-* Automatic scripts and stylesheets injection
+* CLI to generate and destroy modules, styles and partials;
+* Auto create/delete of src files inside app folder;
+* Jade instead of html;
+* Coffee-Script instead of JS;
+* Ng-Classify for better AngularJs Declarations ( https://github.com/CaryLandholt/ng-classify );
+* Stylus instead of css;
+* Automatic compilation;
+* Livereload without any plugins;
+* Production build with optimizations;
+* Automatic bower components injection;
+* Automatic scripts and stylesheets injection.
 
 ##Installation
 
@@ -28,6 +29,40 @@ bower install
 ```
 
 ##Usage
+
+###CLI
+Example of how to use the Command Line Interface of the seed:
+
+__Options:__
+
+* ```-h, --help                       output usage information```
+* ```-V, --version                    output the version number```
+* ```-g, --generate <option> [value]  Generate files```
+* ```-d, --destroy <option> [value]   Generate files```
+
+__Ng-Classify Modules Available (module_name):__ 
+
+* animation
+* config
+* constant
+* controller
+* directive
+* factory
+* filter
+* provider
+* run
+* service
+* value
+
+__Examples:__ 
+
+* To create modules:   ```sh angular-kickoff -g module module_name/class_name```
+* To create partials:  ```sh angular-kickoff -g partial folder_name/name```
+* To create styles:    ```sh angular-kickoff -g style name```
+* To destroy modules:  ```sh angular-kickoff -d module module_name/class_name```
+* To destroy partials: ```sh angular-kickoff -d partial folder_name/name```
+* To destroy styles:   ```sh angular-kickoff -d style name```
+
 
 ###Running the App during Development
 This command automatically compiles coffee, jade and stylus, injects bower components, generates source maps, starts livereload server and opens your app in the browser.
