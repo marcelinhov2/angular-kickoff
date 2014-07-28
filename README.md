@@ -56,14 +56,14 @@ __Ng-Classify Modules Available (module_name):__
 * ```value```
 
 __Examples:__ 
-
-* To create modules:   ```angular-kickoff -g module module_name/class_name```
-* To create partials:  ```angular-kickoff -g partial folder_name/name```
-* To create styles:    ```angular-kickoff -g style name```
-* To destroy modules:  ```angular-kickoff -d module module_name/class_name```
-* To destroy partials: ```angular-kickoff -d partial folder_name/name```
-* To destroy styles:   ```angular-kickoff -d style name```
-
+```sh
+angular-kickoff -g module module_name/class_name   # create modules
+angular-kickoff -g partial folder_name/name        # create partials
+angular-kickoff -g style name                      # create styles
+angular-kickoff -d module module_name/class_name   # destroy modules
+angular-kickoff -d partial folder_name/name        # destroy partials
+angular-kickoff -d style name                      # destroy styles
+```
 
 ###Running the App during Development
 This command automatically compiles coffee, jade and stylus, injects bower components, generates source maps, starts livereload server and opens your app in the browser.
