@@ -1,14 +1,17 @@
 #Angular Kickoff Seed
 AngularJS application boilerplate for Ng-Classify lovers
 
-__based on:__ https://github.com/t3chnoboy/angular-hipster-seed
+__based on:__ https://github.com/CaryLandholt/ng-classify
+
+__inspirated in:__ https://github.com/t3chnoboy/angular-hipster-seed
+
 
 ##Features
 * CLI to generate and destroy modules, styles and partials;
 * Auto create/delete of src files inside app folder;
 * Jade instead of html;
 * Coffee-Script instead of JS;
-* Ng-Classify for better AngularJs Declarations ( https://github.com/CaryLandholt/ng-classify );
+* Ng-Classify for better AngularJs Declarations;
 * Stylus instead of css;
 * Automatic compilation;
 * Livereload without any plugins;
