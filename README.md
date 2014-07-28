@@ -34,11 +34,12 @@ bower install
 Example of how to use the Command Line Interface of the seed:
 
 __Options:__
-
-* ```-h, --help                       output usage information```
-* ```-V, --version                    output the version number```
-* ```-g, --generate <option> [value]  Generate files```
-* ```-d, --destroy <option> [value]   Generate files```
+```sh
+-h, --help                       output usage information
+-V, --version                    output the version number
+-g, --generate <option> [value]  Generate files
+-d, --destroy <option> [value]   Generate files
+```
 
 __Ng-Classify Modules Available (module_name):__ 
 
