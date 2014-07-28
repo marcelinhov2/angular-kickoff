@@ -24,7 +24,7 @@ class CreateStyle
 									 'utf8', 
 									 (err) ->
 				throw err if err
-				console.log "File created successfully."	
+				console.log "File app.styl was successfully updated."	
 
 		fs.writeFile path.join( styles_folder, file_name),'', 'utf8', (err) ->
 			throw err if err
