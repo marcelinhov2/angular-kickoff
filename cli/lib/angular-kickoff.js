@@ -1,15 +1,21 @@
 (function() {
-  var AngularKickoff, CreateModule, CreatePartial, CreateStyle;
+  var AngularKickoff, CreateModule, CreatePartial, CreateStyle, DestroyModule, DestroyPartial, DestroyStyle;
 
-  CreateModule = require('./commands/create_modules');
+  CreateModule = require('./commands/create_module');
 
-  CreatePartial = require('./commands/create_partials');
+  CreatePartial = require('./commands/create_partial');
 
-  CreateStyle = require('./commands/create_styles');
+  CreateStyle = require('./commands/create_style');
+
+  DestroyModule = require('./commands/destroy_module');
+
+  DestroyPartial = require('./commands/destroy_partial');
+
+  DestroyStyle = require('./commands/destroy_style');
 
   AngularKickoff = (function() {
     function AngularKickoff() {
-      program.version('0.0.1').option('-g, --generate <module> [value]', 'Generate files').parse(process.argv);
+      program.version('0.0.1').option('-g, --generate <option> [value]', 'Generate files').option('-d, --destroy <option> [value]', 'Generate files').parse(process.argv);
       if (program.generate === "module") {
         return new CreateModule;
       }
@@ -18,6 +24,15 @@
       }
       if (program.generate === "style") {
         return new CreateStyle;
+      }
+      if (program.destroy === "module") {
+        return new DestroyModule;
+      }
+      if (program.destroy === "partial") {
+        return new DestroyPartial;
+      }
+      if (program.destroy === "style") {
+        return new DestroyStyle;
       }
       return console.log("Not exists");
     }

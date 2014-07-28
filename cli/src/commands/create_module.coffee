@@ -28,6 +28,6 @@ class CreateModule
 									 'utf8', 
 									 (err) ->
 				throw err if err
-				console.log "File created succesfully."	
+				console.log "File created successfully."	
 
 module.exports =  CreateModule

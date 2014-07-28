@@ -7,7 +7,7 @@
 
   CreateStyle = (function() {
     function CreateStyle() {
-      var data, file_name, name;
+      var file_name, import_text, name;
       name = Utils.lowercase(program.args[0]);
       file_name = "" + name + ".styl";
       fs.exists(path.join(styles_folder, file_name), function(exists) {
@@ -16,19 +16,25 @@
           return process.exit(0);
         }
       });
-      data = "\n@import '" + file_name + "'";
-      fs.appendFile(path.join(styles_folder, "/app.styl"), data, (function(_this) {
-        return function(err) {
+      import_text = "\n@import '" + file_name + "'";
+      fs.readFile(path.join(styles_folder, "/app.styl"), 'utf8', (function(_this) {
+        return function(err, data) {
           if (err) {
             throw err;
           }
+          data = data.replace('"mixins.styl"', '"mixins.styl"' + import_text);
+          fs.writeFile(path.join(styles_folder, "app.styl"), data, 'utf8', function(err) {});
+          if (err) {
+            throw err;
+          }
+          return console.log("File created successfully.");
         };
       })(this));
       fs.writeFile(path.join(styles_folder, file_name), '', 'utf8', function(err) {
         if (err) {
           throw err;
         }
-        return console.log("File created succesfully.");
+        return console.log("File created successfully.");
       });
     }
 
