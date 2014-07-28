@@ -42,26 +42,26 @@ __Options:__
 
 __Ng-Classify Modules Available (module_name):__ 
 
-* animation
-* config
-* constant
-* controller
-* directive
-* factory
-* filter
-* provider
-* run
-* service
-* value
+* ```animation```
+* ```config```
+* ```constant```
+* ```controller```
+* ```directive```
+* ```factory```
+* ```filter```
+* ```provider```
+* ```run```
+* ```service```
+* ```value```
 
 __Examples:__ 
 
-* To create modules:   ```sh angular-kickoff -g module module_name/class_name```
-* To create partials:  ```sh angular-kickoff -g partial folder_name/name```
-* To create styles:    ```sh angular-kickoff -g style name```
-* To destroy modules:  ```sh angular-kickoff -d module module_name/class_name```
-* To destroy partials: ```sh angular-kickoff -d partial folder_name/name```
-* To destroy styles:   ```sh angular-kickoff -d style name```
+* To create modules:   ```angular-kickoff -g module module_name/class_name```
+* To create partials:  ```angular-kickoff -g partial folder_name/name```
+* To create styles:    ```angular-kickoff -g style name```
+* To destroy modules:  ```angular-kickoff -d module module_name/class_name```
+* To destroy partials: ```angular-kickoff -d partial folder_name/name```
+* To destroy styles:   ```angular-kickoff -d style name```
 
 
 ###Running the App during Development
