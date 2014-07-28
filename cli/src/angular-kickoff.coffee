@@ -10,11 +10,20 @@ DestroyStyle = require './commands/destroy_style'
 
 class AngularKickoff
 	constructor:() ->
+		program.on '--help', ->
+		  console.log '  Examples:'
+		  console.log ''
+		  console.log '    To create modules use:'
+		  console.log '    	$ angular-kickoff -g module folder/module'
+		  console.log ''
+		  
 		program
-			.version('0.0.1')
+			.version('0.1.0')
 			.option('-g, --generate <option> [value]', 'Generate files')
 			.option('-d, --destroy <option> [value]', 'Generate files')
 			.parse(process.argv)
+
+		
 		
 		# Generators
 		return new CreateModule if program.generate == "module"

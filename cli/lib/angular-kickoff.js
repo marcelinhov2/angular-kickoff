@@ -15,7 +15,14 @@
 
   AngularKickoff = (function() {
     function AngularKickoff() {
-      program.version('0.0.1').option('-g, --generate <option> [value]', 'Generate files').option('-d, --destroy <option> [value]', 'Generate files').parse(process.argv);
+      program.on('--help', function() {
+        console.log('  Examples:');
+        console.log('');
+        console.log('    To create modules use:');
+        console.log('    	$ angular-kickoff -g module folder/module');
+        return console.log('');
+      });
+      program.version('0.1.0').option('-g, --generate <option> [value]', 'Generate files').option('-d, --destroy <option> [value]', 'Generate files').parse(process.argv);
       if (program.generate === "module") {
         return new CreateModule;
       }
