@@ -61,7 +61,7 @@
       if (program.destroy === "style") {
         return new DestroyStyle;
       }
-      return console.log("Not exists");
+      return console.log(program.help());
     }
 
     return AngularKickoff;

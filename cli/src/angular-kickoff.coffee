@@ -56,6 +56,6 @@ class AngularKickoff
 		return new DestroyStyle if program.destroy == "style"
 
 		# Command not found
-		return console.log "Not exists"
+		return console.log program.help()
 
 module.exports = new AngularKickoff
