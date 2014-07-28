@@ -43,17 +43,17 @@ __Options:__
 
 __Ng-Classify Modules Available (module_name):__ 
 
-* ```animation```
-* ```config```
-* ```constant```
-* ```controller```
-* ```directive```
-* ```factory```
-* ```filter```
-* ```provider```
-* ```run```
-* ```service```
-* ```value```
+* ```animation```  https://github.com/CaryLandholt/ng-classify#animation
+* ```config```     https://github.com/CaryLandholt/ng-classify#config
+* ```constant```   https://github.com/CaryLandholt/ng-classify#constant
+* ```controller``` https://github.com/CaryLandholt/ng-classify#controller 
+* ```directive```  https://github.com/CaryLandholt/ng-classify#directive
+* ```factory```    https://github.com/CaryLandholt/ng-classify#factory
+* ```filter```     https://github.com/CaryLandholt/ng-classify#filter
+* ```provider```   https://github.com/CaryLandholt/ng-classify#provider
+* ```run```        https://github.com/CaryLandholt/ng-classify#run
+* ```service```    https://github.com/CaryLandholt/ng-classify#service
+* ```value```      https://github.com/CaryLandholt/ng-classify#value
 
 __Examples:__ 
 ```sh
