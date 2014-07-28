@@ -1,6 +1,5 @@
 {
   "name": "angular-kickoff",
- 
   "scripts": {
     "preinstall": "npm link ./cli/",
     "postinstall": "bower install"

@@ -1,18 +1,23 @@
 #Angular Kickoff Seed
 AngularJS application boilerplate for Ng-Classify lovers
-##based on: https://github.com/t3chnoboy/angular-hipster-seed
+
+__based on:__ [ng-classify](https://github.com/CaryLandholt/ng-classify)
+
+__inspirated in:__ [angular-hipster-seed](https://github.com/t3chnoboy/angular-hipster-seed)
+
 
 ##Features
-* Auto create/delete of src files inside app folder
-* Jade instead of html
-* Coffee-Script instead of JS
-* Ng-Classify for better AngularJs Declarations ( https://github.com/CaryLandholt/ng-classify )
-* Stylus instead of css
-* Automatic compilation
-* Livereload without any plugins
-* Production build with optimizations
-* Automatic bower components injection
-* Automatic scripts and stylesheets injection
+* CLI to generate and destroy modules, styles and partials ( Contribution of: [viniciuszago](https://github.com/viniciuszago) );
+* Auto create/delete of src files inside app folder;
+* Jade instead of html;
+* Coffee-Script instead of JS;
+* Ng-Classify for better AngularJs Declarations;
+* Stylus instead of css;
+* Automatic compilation;
+* Livereload without any plugins;
+* Production build with optimizations;
+* Automatic bower components injection;
+* Automatic scripts and stylesheets injection.
 
 ##Installation
 
@@ -28,6 +33,41 @@ bower install
 ```
 
 ##Usage
+
+###CLI
+Example of how to use the Command Line Interface of the seed:
+
+__Options:__
+```sh
+-h, --help                       # Output usage information
+-V, --version                    # Output the version number
+-g, --generate <option> [value]  # Generate files
+-d, --destroy <option> [value]   # Generate files
+```
+
+__Ng-Classify Modules Available (module_name):__ 
+
+* ```animation```  https://github.com/CaryLandholt/ng-classify#animation
+* ```config```     https://github.com/CaryLandholt/ng-classify#config
+* ```constant```   https://github.com/CaryLandholt/ng-classify#constant
+* ```controller``` https://github.com/CaryLandholt/ng-classify#controller 
+* ```directive```  https://github.com/CaryLandholt/ng-classify#directive
+* ```factory```    https://github.com/CaryLandholt/ng-classify#factory
+* ```filter```     https://github.com/CaryLandholt/ng-classify#filter
+* ```provider```   https://github.com/CaryLandholt/ng-classify#provider
+* ```run```        https://github.com/CaryLandholt/ng-classify#run
+* ```service```    https://github.com/CaryLandholt/ng-classify#service
+* ```value```      https://github.com/CaryLandholt/ng-classify#value
+
+__Examples:__ 
+```sh
+angular-kickoff -g module module_name/class_name   # create modules
+angular-kickoff -g partial folder_name/name        # create partials
+angular-kickoff -g style name                      # create styles
+angular-kickoff -d module module_name/class_name   # destroy modules
+angular-kickoff -d partial folder_name/name        # destroy partials
+angular-kickoff -d style name                      # destroy styles
+```
 
 ###Running the App during Development
 This command automatically compiles coffee, jade and stylus, injects bower components, generates source maps, starts livereload server and opens your app in the browser.
@@ -119,5 +159,4 @@ angular-kickoff
 ```
 
 ##TODO's
-* File Generators
 * Tests
