@@ -18,13 +18,17 @@
           return process.exit(0);
         }
       });
-      fs.mkdir(path.join(partials_folder, folder_name), '755');
+      fs.exists(path.join(partials_folder, folder_name), function(exists) {
+        if (!exists) {
+          return fs.mkdir(path.join(partials_folder, folder_name), '755');
+        }
+      });
       data = "p " + name;
       fs.writeFile(path.join(partials_folder, file_name), data, 'utf8', function(err) {
         if (err) {
           throw err;
         }
-        return console.log("File created succesfully.");
+        return console.log("File created successfully.");
       });
     }
 

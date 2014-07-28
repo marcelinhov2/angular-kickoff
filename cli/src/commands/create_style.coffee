@@ -13,12 +13,21 @@ class CreateStyle
 				console.log("File already exists.")
 				process.exit(0)
 
-		data = "\n@import '#{file_name}'"
-		fs.appendFile path.join( styles_folder, "/app.styl"), data, (err) =>
+		import_text = "\n@import '#{file_name}'"
+
+		fs.readFile path.join( styles_folder, "/app.styl"), 'utf8', (err, data) =>
 			throw err  if err
+			data = data.replace '"mixins.styl"', '"mixins.styl"' + import_text
+			
+			fs.writeFile path.join( styles_folder, "app.styl"),
+									 data,
+									 'utf8', 
+									 (err) ->
+				throw err if err
+				console.log "File created successfully."	
 
 		fs.writeFile path.join( styles_folder, file_name),'', 'utf8', (err) ->
 			throw err if err
-			console.log "File created succesfully."
+			console.log "File created successfully."
 
 module.exports =  CreateStyle
