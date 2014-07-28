@@ -4,4 +4,4 @@ path = require( 'path' );
 fs = require('fs');
 colors = require('colors');
 program = require('commander');
-require(path.join( __dirname, '..', 'cli', 'lib', 'angular-kickoff.js' ));
+require(path.join( __dirname, '..', 'lib', 'angular-kickoff.js' ));

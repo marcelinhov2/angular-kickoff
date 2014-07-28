@@ -1,35 +1,13 @@
 {
   "name": "angular-kickoff",
-  "version": "0.1.1",
-  "description": "AngularJS application boilerplate for Ng-Classify lovers",
-  "author": "Marcelo Andrade  (https://github.com/marcelinhov2/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/marcelinhov2/angular-kickoff/issues"
-  },
-  "homepage": "https://github.com/marcelinhov2/angular-kickoff",
-  "main": "cli/lib/angular-kickoff",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/marcelinhov2/angular-kickoff.git"
-  },
-  "engines": {
-    "node": ">= 0.10.28"
-  },
-  "bin": {
-    "angular-kickoff": "./bin/angular-kickoff"
-  },
+ 
   "scripts": {
+    "preinstall": "npm link ./cli/",
     "postinstall": "bower install"
   },
-  "keywords": [
-    "angular",
-    "angularjs"
-  ],
   "dependencies": {
     "bower": "^1.3.5",
     "coffee-script": "^1.7.1",
-    "colors": "^0.6.2",
     "event-stream": "^3.1.5",
     "gulp": "^3.8.5",
     "main-bower-files": "~1.0.0",
@@ -42,6 +20,7 @@
     "gulp-inject": "^0.4.1",
     "gulp-jade": "^0.6.1",
     "gulp-ngmin": "^0.3.0",
+    "gulp-sourcemaps": "^0.4.1",
     "gulp-stylus": "^1.0.2",
     "gulp-uglify": "^0.3.1",
     "gulp-usemin": "^0.3.5",
@@ -51,7 +30,9 @@
     "rimraf": "^2.2.6",
     "jade": "^1.3.1",
     "open": "0.0.5",
-    "stylus": "^0.46.3",
-    "commander": "2.3.0"
+    "stylus": "^0.46.3"
+  },
+  "devDependencies": {
+    "angular-kickoff-cli": "~0.1.0"
   }
 }
