@@ -7,7 +7,7 @@
   "bugs": {
     "url": "https://github.com/marcelinhov2/angular-kickoff/issues"
   },
-  "homepage": "https://github.com/marcelinhov2/angular-kickoff",
+  "homepage": "http://marcelinhov2.github.io/angular-kickoff",
   "main": "cli/lib/angular-kickoff",
   "repository": {
     "type": "git",
