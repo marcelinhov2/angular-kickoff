@@ -21,7 +21,6 @@
     "gulp-inject": "^0.4.1",
     "gulp-jade": "^0.6.1",
     "gulp-ngmin": "^0.3.0",
-    "gulp-sourcemaps": "^0.4.1",
     "gulp-stylus": "^1.0.2",
     "gulp-uglify": "^0.3.1",
     "gulp-usemin": "^0.3.5",
