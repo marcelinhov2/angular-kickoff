@@ -119,6 +119,5 @@ angular-kickoff
 ```
 
 ##TODO's
-* SourceMaps
 * File Generators
 * Tests
