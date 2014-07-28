@@ -1,56 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
     <title>Angular-kickoff by marcelinhov2</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Angular-kickoff</h1>
+        <p class="header"></p>
 
-    <header>
-      <div class="container">
-        <h1>Angular-kickoff</h1>
-        <h2></h2>
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/marcelinhov2/angular-kickoff/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/marcelinhov2/angular-kickoff/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/marcelinhov2/angular-kickoff">View On GitHub</a></li>
+        </ul>
 
-        <section id="downloads">
-          <a href="https://github.com/marcelinhov2/angular-kickoff/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/marcelinhov2/angular-kickoff/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/marcelinhov2/angular-kickoff" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/marcelinhov2">marcelinhov2</a></p>
 
-    <div class="container">
-      <section id="main_content">
+
+      </header>
+      <section>
         <h1>
 <a name="angular-kickoff-seed" class="anchor" href="#angular-kickoff-seed"><span class="octicon octicon-link"></span></a>Angular Kickoff Seed</h1>
 
 <p>AngularJS application boilerplate for Ng-Classify lovers</p>
 
-<h2>
-<a name="based-on-httpsgithubcomt3chnoboyangular-hipster-seed" class="anchor" href="#based-on-httpsgithubcomt3chnoboyangular-hipster-seed"><span class="octicon octicon-link"></span></a>based on: <a href="https://github.com/t3chnoboy/angular-hipster-seed">https://github.com/t3chnoboy/angular-hipster-seed</a>
-</h2>
+<p><strong>based on:</strong> <a href="https://github.com/CaryLandholt/ng-classify">https://github.com/CaryLandholt/ng-classify</a></p>
+
+<p><strong>inspirated in:</strong> <a href="https://github.com/t3chnoboy/angular-hipster-seed">https://github.com/t3chnoboy/angular-hipster-seed</a></p>
 
 <h2>
 <a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
 
 <ul>
-<li>Auto create/delete of src files inside app folder</li>
-<li>Jade instead of html</li>
-<li>Coffee-Script instead of JS</li>
-<li>Ng-Classify for better AngularJs Declarations ( <a href="https://github.com/CaryLandholt/ng-classify">https://github.com/CaryLandholt/ng-classify</a> )</li>
-<li>Stylus instead of css</li>
-<li>Automatic compilation</li>
-<li>Livereload without any plugins</li>
-<li>Production build with optimizations</li>
-<li>Automatic bower components injection</li>
-<li>Automatic scripts and stylesheets injection</li>
+<li>CLI to generate and destroy modules, styles and partials;</li>
+<li>Auto create/delete of src files inside app folder;</li>
+<li>Jade instead of html;</li>
+<li>Coffee-Script instead of JS;</li>
+<li>Ng-Classify for better AngularJs Declarations;</li>
+<li>Stylus instead of css;</li>
+<li>Automatic compilation;</li>
+<li>Livereload without any plugins;</li>
+<li>Production build with optimizations;</li>
+<li>Automatic bower components injection;</li>
+<li>Automatic scripts and stylesheets injection.</li>
 </ul><h2>
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
@@ -68,6 +71,64 @@ bower install
 
 <h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<h3>
+<a name="cli" class="anchor" href="#cli"><span class="octicon octicon-link"></span></a>CLI</h3>
+
+<p>Example of how to use the Command Line Interface of the seed:</p>
+
+<p><strong>Options:</strong></p>
+
+<div class="highlight highlight-sh"><pre>-h, --help                       <span class="c"># Output usage information</span>
+-V, --version                    <span class="c"># Output the version number</span>
+-g, --generate &lt;option&gt; <span class="o">[</span>value<span class="o">]</span>  <span class="c"># Generate files</span>
+-d, --destroy &lt;option&gt; <span class="o">[</span>value<span class="o">]</span>   <span class="c"># Generate files</span>
+</pre></div>
+
+<p><strong>Ng-Classify Modules Available (module_name):</strong> </p>
+
+<ul>
+<li>
+<code>animation</code>  <a href="https://github.com/CaryLandholt/ng-classify#animation">https://github.com/CaryLandholt/ng-classify#animation</a>
+</li>
+<li>
+<code>config</code>     <a href="https://github.com/CaryLandholt/ng-classify#config">https://github.com/CaryLandholt/ng-classify#config</a>
+</li>
+<li>
+<code>constant</code>   <a href="https://github.com/CaryLandholt/ng-classify#constant">https://github.com/CaryLandholt/ng-classify#constant</a>
+</li>
+<li>
+<code>controller</code> <a href="https://github.com/CaryLandholt/ng-classify#controller">https://github.com/CaryLandholt/ng-classify#controller</a> </li>
+<li>
+<code>directive</code>  <a href="https://github.com/CaryLandholt/ng-classify#directive">https://github.com/CaryLandholt/ng-classify#directive</a>
+</li>
+<li>
+<code>factory</code>    <a href="https://github.com/CaryLandholt/ng-classify#factory">https://github.com/CaryLandholt/ng-classify#factory</a>
+</li>
+<li>
+<code>filter</code>     <a href="https://github.com/CaryLandholt/ng-classify#filter">https://github.com/CaryLandholt/ng-classify#filter</a>
+</li>
+<li>
+<code>provider</code>   <a href="https://github.com/CaryLandholt/ng-classify#provider">https://github.com/CaryLandholt/ng-classify#provider</a>
+</li>
+<li>
+<code>run</code>        <a href="https://github.com/CaryLandholt/ng-classify#run">https://github.com/CaryLandholt/ng-classify#run</a>
+</li>
+<li>
+<code>service</code>    <a href="https://github.com/CaryLandholt/ng-classify#service">https://github.com/CaryLandholt/ng-classify#service</a>
+</li>
+<li>
+<code>value</code>      <a href="https://github.com/CaryLandholt/ng-classify#value">https://github.com/CaryLandholt/ng-classify#value</a>
+</li>
+</ul><p><strong>Examples:</strong> </p>
+
+<div class="highlight highlight-sh"><pre>angular-kickoff -g module module_name/class_name   <span class="c"># create modules</span>
+angular-kickoff -g partial folder_name/name        <span class="c"># create partials</span>
+angular-kickoff -g style name                      <span class="c"># create styles</span>
+angular-kickoff -d module module_name/class_name   <span class="c"># destroy modules</span>
+angular-kickoff -d partial folder_name/name        <span class="c"># destroy partials</span>
+angular-kickoff -d style name                      <span class="c"># destroy styles</span>
+</pre></div>
 
 <h3>
 <a name="running-the-app-during-development" class="anchor" href="#running-the-app-during-development"><span class="octicon octicon-link"></span></a>Running the App during Development</h3>
@@ -169,13 +230,15 @@ bower install
 <a name="todos" class="anchor" href="#todos"><span class="octicon octicon-link"></span></a>TODO's</h2>
 
 <ul>
-<li>SourceMaps</li>
 <li>File Generators</li>
 <li>Tests</li>
 </ul>
       </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
     </div>
-
-    
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
   </body>
 </html>
