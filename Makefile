@@ -6,8 +6,8 @@ setup:
 	npm install
 	@$(BO) install
 
-serve:
-	@$(GU) serve
+server:
+	@$(GU) server
 
 compile:
 	@$(GU) compile
