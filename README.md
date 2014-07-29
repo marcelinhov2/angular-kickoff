@@ -28,8 +28,7 @@ cd angular-kickoff
 ```
 Install dependencies
 ```sh
-npm install
-bower install
+make setup
 ```
 
 ##Usage
@@ -72,19 +71,19 @@ angular-kickoff -d style name                      # destroy styles
 ###Running the App during Development
 This command automatically compiles coffee, jade and stylus, injects bower components, generates source maps, starts livereload server and opens your app in the browser.
 ```sh
-gulp serve
+make serve
 ```
 
 ###Compiling app for development
 This command compiles project and generates source maps. Output goes to ```sh app/``` folder
 ```
-gulp compile
+make compile
 ```
 
 ###Building the App for Production
 This command compiles project and optimizes it for production. Output goes to ```sh dist/``` folder
 ```
-gulp build
+make build
 ```
 
 ##Directory layout
