@@ -2,9 +2,11 @@ BO=node_modules/.bin/bower
 GU=node_modules/.bin/gulp
 
 setup:
-	rm -rf .git
 	npm install
 	@$(BO) install
+
+remove_remote:
+	rm -rf .git
 
 server:
 	@$(GU) server

@@ -22,7 +22,7 @@ paths =
   index:     'src/index.jade'
   fonts:     'src/fonts/**/*'
   images:    'src/images/**/*'
-  styles:    'src/styles/app.styl'
+  styles:    'src/styles/**/*.styl'
   scripts:   'src/scripts/**/*.coffee'
   partials:  'src/partials/**/*.jade'
 
