@@ -158,7 +158,7 @@ gulp.task "concat_bower:prod", ->
     .pipe gulp.dest "dist/scripts"
 
 # Launch server and open app in default browser
-gulp.task 'serve', ['compile', 'watch'], ->
+gulp.task 'server', ['compile', 'watch'], ->
   connect.server
     port       : 1337
     root       : 'app'

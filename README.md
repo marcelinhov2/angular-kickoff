@@ -71,7 +71,7 @@ angular-kickoff -d style name                      # destroy styles
 ###Running the App during Development
 This command automatically compiles coffee, jade and stylus, injects bower components, generates source maps, starts livereload server and opens your app in the browser.
 ```sh
-make serve
+make server
 ```
 
 ###Compiling app for development
