@@ -65,8 +65,7 @@
 
 <p>Install dependencies</p>
 
-<div class="highlight highlight-sh"><pre>npm install
-bower install
+<div class="highlight highlight-sh"><pre>make setup
 </pre></div>
 
 <h2>
@@ -135,7 +134,7 @@ angular-kickoff -d style name                      <span class="c"># destroy sty
 
 <p>This command automatically compiles coffee, jade and stylus, injects bower components, generates source maps, starts livereload server and opens your app in the browser.</p>
 
-<div class="highlight highlight-sh"><pre>gulp serve
+<div class="highlight highlight-sh"><pre>make server
 </pre></div>
 
 <h3>
@@ -143,7 +142,7 @@ angular-kickoff -d style name                      <span class="c"># destroy sty
 
 <p>This command compiles project and generates source maps. Output goes to <code>sh app/</code> folder</p>
 
-<pre><code>gulp compile
+<pre><code>make compile
 </code></pre>
 
 <h3>
@@ -151,7 +150,7 @@ angular-kickoff -d style name                      <span class="c"># destroy sty
 
 <p>This command compiles project and optimizes it for production. Output goes to <code>sh dist/</code> folder</p>
 
-<pre><code>gulp build
+<pre><code>make build
 </code></pre>
 
 <h2>
