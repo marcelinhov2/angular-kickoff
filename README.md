@@ -26,6 +26,10 @@ Clone repo using git
 git clone https://github.com/marcelinhov2/angular-kickoff.git
 cd angular-kickoff
 ```
+Erase remote
+```sh
+make remove_remote
+```
 Install dependencies
 ```sh
 make setup
@@ -66,6 +70,12 @@ angular-kickoff -g style name                      # create styles
 angular-kickoff -d module module_name/class_name   # destroy modules
 angular-kickoff -d partial folder_name/name        # destroy partials
 angular-kickoff -d style name                      # destroy styles
+```
+
+###Clean remote
+This command automatically erase the .git folder.
+```sh
+make remove_remote
 ```
 
 ###Running the App during Development
