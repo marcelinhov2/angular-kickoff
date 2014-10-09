@@ -37,6 +37,7 @@ gulp.task 'scripts', ['move_bower'], ->
     .pipe do classify
     .pipe coffee bare: false
     .pipe gulp.dest 'app/scripts'
+    .pipe connect.reload()
 
 gulp.task 'move_bower', (cb) ->
   gulp.src './bower_components/**/*'
@@ -55,6 +56,7 @@ gulp.task 'styles', ->
 gulp.task 'images', ->
   gulp.src paths.images
     .pipe gulp.dest 'app/images'
+    .pipe connect.reload()
 
 # Copy fonts
 gulp.task 'fonts', ->
@@ -66,6 +68,7 @@ gulp.task 'partials', ->
   gulp.src paths.partials
     .pipe jade pretty: yes
     .pipe gulp.dest 'app/partials'
+    .pipe connect.reload()
 
 #Compile index.jade, inject compiled stylesheets, inject compiled scripts, inject bower packages
 gulp.task 'index', ['clean', 'scripts', 'concat_bower', 'styles', 'partials', 'images', 'fonts'], ->
@@ -91,10 +94,10 @@ gulp.task "clean", (cb) ->
 
 # Register tasks
 gulp.task 'watch', ->
-  gulp.watch paths.partials , ['index']
-  gulp.watch paths.scripts  , ['index']
+  gulp.watch paths.partials , ['partials']
+  gulp.watch paths.scripts  , ['scripts']
   gulp.watch paths.styles   , ['styles']
-  gulp.watch paths.images   , ['index']
+  gulp.watch paths.images   , ['images']
   gulp.watch paths.index    , ['index']
 
 
