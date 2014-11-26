@@ -47,7 +47,7 @@ gulp.task 'move_bower', (cb) ->
 
 #Compile stylus, trigger livereload
 gulp.task 'styles', ->
-  gulp.src paths.styles
+  gulp.src 'src/styles/app.styl'
     .pipe stylus()
     .pipe gulp.dest 'app/styles'
     .pipe connect.reload()
@@ -83,7 +83,12 @@ gulp.task 'index', ['clean', 'scripts', 'concat_bower', 'styles', 'partials', 'i
     .pipe connect.reload()
 
 gulp.task "concat_bower", ->
-  gulp.src bowerFiles()
+  gulp.src bowerFiles({
+      filter: /\.js$/i,
+      paths: {
+        bowerDirectory: './bower_components',
+      }
+    })
     .pipe(concat( 'dependencies.js') )
     .pipe gulp.dest "app/scripts"
 

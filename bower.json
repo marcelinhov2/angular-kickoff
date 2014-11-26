@@ -1,6 +1,6 @@
 {
-  "name": "webapp",
-  "version": "0.0.0",
+  "name": "ngSprntr",
+  "version": "2.0.0",
   "license": "MIT",
   "private": true,
   "ignore": [
@@ -11,16 +11,22 @@
     "tests"
   ],
   "devDependencies": {
-    "angular-mocks": "~1.2.18",
-    "angular-scenario": "~1.2.18"
+    
   },
   "dependencies": {
-    "jquery": "~1.11.1",
-    "angular": "~1.2.18",
-    "angular-route": "~1.2.18",
-    "angular-loader": "~1.2.18",
-    "angular-resource": "~1.2.18",
-    "angular-animate": "~1.2.18",
-    "angular-cookies": "~1.2.18"
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-loader": "latest",
+    "angular-resource": "latest",
+    "angular-animate": "latest",
+    "angular-local-storage": "latest",
+    "angular-cookies": "latest",
+    "angular-bootstrap": "latest",
+    "angular-ui-utils": "latest",
+    "angular-smart-table": "latest",
+    "angularjs-dropdown-multiselect": "latest",
+    "angular-mocks": "latest",
+    "angular-scenario": "latest",
+    "bootstrap": "latest"
   }
 }
