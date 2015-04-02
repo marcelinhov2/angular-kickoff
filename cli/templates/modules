@@ -1,2 +1,0 @@
-class ~NAME extends ~MODULE
-  constructor: () ->
