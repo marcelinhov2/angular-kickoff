@@ -7,7 +7,6 @@ __inspirated in:__ [angular-hipster-seed](https://github.com/t3chnoboy/angular-h
 
 
 ##Features
-* CLI to generate and destroy modules, styles and partials ( Contribution of: [viniciuszago](https://github.com/viniciuszago) );
 * Auto create/delete of src files inside www folder;
 * Jade instead of html;
 * Coffee-Script instead of JS;
@@ -33,43 +32,6 @@ make remove_remote
 Install dependencies
 ```sh
 make setup
-```
-
-##Usage
-
-###CLI
-Example of how to use the Command Line Interface of the seed:
-
-__Options:__
-```sh
-angular-kickoff -h, --help                       # Output usage information
-angular-kickoff -V, --version                    # Output the version number
-angular-kickoff -g, --generate <option> [value]  # Generate files
-angular-kickoff -d, --destroy <option> [value]   # Generate files
-```
-
-__Ng-Classify Modules Available (module_name):__ 
-
-* ```animation```  https://github.com/CaryLandholt/ng-classify#animation
-* ```config```     https://github.com/CaryLandholt/ng-classify#config
-* ```constant```   https://github.com/CaryLandholt/ng-classify#constant
-* ```controller``` https://github.com/CaryLandholt/ng-classify#controller 
-* ```directive```  https://github.com/CaryLandholt/ng-classify#directive
-* ```factory```    https://github.com/CaryLandholt/ng-classify#factory
-* ```filter```     https://github.com/CaryLandholt/ng-classify#filter
-* ```provider```   https://github.com/CaryLandholt/ng-classify#provider
-* ```run```        https://github.com/CaryLandholt/ng-classify#run
-* ```service```    https://github.com/CaryLandholt/ng-classify#service
-* ```value```      https://github.com/CaryLandholt/ng-classify#value
-
-__Examples:__ 
-```sh
-angular-kickoff -g module module_name/class_name   # create modules
-angular-kickoff -g partial folder_name/name        # create partials
-angular-kickoff -g style name                      # create styles
-angular-kickoff -d module module_name/class_name   # destroy modules
-angular-kickoff -d partial folder_name/name        # destroy partials
-angular-kickoff -d style name                      # destroy styles
 ```
 
 ###Clean remote
