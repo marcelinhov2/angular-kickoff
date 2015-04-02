@@ -26,7 +26,6 @@
     "angular-smart-table": "latest",
     "angularjs-dropdown-multiselect": "latest",
     "angular-mocks": "latest",
-    "angular-scenario": "latest",
-    "bootstrap": "latest"
+    "angular-scenario": "latest"
   }
 }
