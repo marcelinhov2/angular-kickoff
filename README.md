@@ -8,7 +8,7 @@ __inspirated in:__ [angular-hipster-seed](https://github.com/t3chnoboy/angular-h
 
 ##Features
 * CLI to generate and destroy modules, styles and partials ( Contribution of: [viniciuszago](https://github.com/viniciuszago) );
-* Auto create/delete of src files inside app folder;
+* Auto create/delete of src files inside www folder;
 * Jade instead of html;
 * Coffee-Script instead of JS;
 * Ng-Classify for better AngularJs Declarations;
@@ -85,7 +85,7 @@ make server
 ```
 
 ###Compiling app for development
-This command compiles project and generates source maps. Output goes to ```sh app/``` folder
+This command compiles project and generates source maps. Output goes to ```sh www/``` folder
 ```
 make compile
 ```
@@ -129,7 +129,7 @@ angular-kickoff
 
 ```sh
 angular-kickoff
- app                      # development build
+ www                      # development build
   ├── bower_components
   ├── fonts
   ├── images
