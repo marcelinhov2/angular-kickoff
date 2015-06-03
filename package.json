@@ -28,12 +28,14 @@
     "gulp-ng-classify": "~4.0.0",
     "gulp-util": "~3.0.4",
     "gulp-preprocess": "~1.2.0",
+    "gulp-if": "~1.2.5",
     "run-sequence": "~1.0.2",
     "rimraf": "~2.3.2",
     "gulp-rimraf": "~0.1.1",
     "jade": "~1.9.2",
     "open": "~0.0.5",
-    "stylus": "~0.50.0"
+    "stylus": "~0.50.0",
+    "yargs": "~3.7.0"
   },
   "devDependencies": {
     "karma": "~0.12.31",

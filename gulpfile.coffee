@@ -1,4 +1,6 @@
 gulp          = require 'gulp'
+argv          = require('yargs').argv
+gulpif        = require 'gulp-if'
 open          = require 'open'
 es            = require 'event-stream'
 coffee        = require 'gulp-coffee'
@@ -25,16 +27,12 @@ paths =
   scripts:  'src/scripts/**/*.coffee'
   partials: 'src/partials/**/*.jade'
 
-############################## Development ##############################
+folder = if (argv.compress) then 'dist' else 'www'
+env = if (argv.compress) then 'production' else 'testing'
 
-# Clean development build folder
 gulp.task "clean", (cb) ->
-  rimraf.sync "./www"
+  rimraf.sync "./#{folder}"
   cb null
-
-gulp.task 'move_bower', ->
-  gulp.src './bower_components/**/*'
-    .pipe gulp.dest 'www/bower_components'
 
 gulp.task "concat_bower", ->
   gulp.src bowerFiles({
@@ -44,70 +42,77 @@ gulp.task "concat_bower", ->
       }
     })
     .pipe(concat( 'dependencies.js') )
-    .pipe gulp.dest "www/scripts"
+    .pipe gulpif(argv.compress, uglify())
+    .pipe gulp.dest "#{folder}/scripts"
 
-# Compile coffee, generate source maps, trigger livereload
 gulp.task 'scripts', ->
   gulp.src paths.scripts
-    .pipe preprocess context: NODE_ENV: 'testing'
+    .pipe preprocess context: NODE_ENV: env
     .pipe do classify
     .pipe coffee bare: false
-    .pipe gulp.dest 'www/scripts'
+    .pipe gulpif(argv.compress, uglify())
+    .pipe gulpif(argv.compress, concat('app.js'))
+    .pipe gulp.dest "#{folder}/scripts"
 
-#Compile stylus, trigger livereload
 gulp.task 'styles', ->
   gulp.src paths.styles
     .pipe stylus()
-    .pipe gulp.dest 'www/styles'
+    .pipe gulp.dest "#{folder}/styles"
 
 gulp.task 'styles:reload', ->
   gulp.src paths.styles
     .pipe stylus()
-    .pipe gulp.dest 'www/styles'
+    .pipe gulp.dest "#{folder}/styles"
     .pipe connect.reload()
 
-#Copy images, trigger livereload
 gulp.task 'images', ->
   gulp.src paths.images
-    .pipe gulp.dest 'www/images'
+    .pipe gulpif(argv.compress, imagemin())
+    .pipe gulp.dest "#{folder}/images"
 
-# Copy fonts
 gulp.task 'fonts', ->
   gulp.src paths.fonts
-    .pipe gulp.dest 'www/fonts'
+    .pipe gulp.dest "#{folder}/fonts"
 
-#Compile Jade, trigger livereload
 gulp.task 'partials', ->
   gulp.src paths.partials
     .pipe jade pretty: yes
     .pipe templateCache('templates', {standalone:true, root: '/partials/'} )
     .pipe rename(extname: '.js')
-    .pipe gulp.dest 'www/scripts'
+    .pipe gulpif(argv.compress, uglify())
+    .pipe gulp.dest "#{folder}/scripts"
 
-#Compile index.jade, inject compiled stylesheets, inject compiled scripts, inject bower packages
 gulp.task 'index', ->
+  if(argv.compress)
+    scripts = [
+      "./#{folder}/scripts/dependencies.js"
+      "./#{folder}/scripts/templates.js"
+      "./#{folder}/scripts/app.js"
+    ]
+  else
+    scripts = "./#{folder}/scripts/**/*.js"
+
   gulp.src paths.index
     .pipe jade pretty: yes
     .pipe inject(es.merge(
-      gulp.src './www/styles/**/*.css', read: no
+      gulp.src "./#{folder}/styles/**/*.css", read: no
     ,
-      gulp.src './www/scripts/**/*.js', read: no
-    ), ignorePath: '/www', addRootSlash: false)
-    .pipe gulp.dest 'www/'
+      gulp.src scripts, read: no
+    ), ignorePath: "/#{folder}", addRootSlash: false)
+    .pipe gulp.dest "#{folder}/"
+
+gulp.task 'server', ['compile', 'watch'], ->
+  connect.server
+    port       : 1337
+    root       : "#{folder}"
+    livereload : yes
+    fallback   : "#{folder}/index.html"
+
+  open 'http://localhost:1337'
 
 gulp.task 'reload', ->
   gulp.src paths.index
     .pipe connect.reload()
-
-# Launch server and open app in default browser
-gulp.task 'server', ['compile', 'watch'], ->
-  connect.server
-    port       : 1337
-    root       : 'www'
-    livereload : yes
-    fallback   : 'www/index.html'
-
-  open 'http://localhost:1337'
 
 # Register tasks
 gulp.task 'watch', ->
@@ -119,7 +124,6 @@ gulp.task 'watch', ->
 
 gulp.task 'compile', ['clean'], (cb) ->
   runSequence(
-    'move_bower', 
     'concat_bower', 
     [
       'scripts', 
@@ -133,88 +137,4 @@ gulp.task 'compile', ['clean'], (cb) ->
     cb
   );
 
-
-# PRODUCTION
-
-# Clean development build folder
-gulp.task "clean:prod", (cb) ->
-  rimraf.sync "./dist"
-  cb null
-
-gulp.task "concat_bower:prod", ->
-  gulp.src bowerFiles({
-      filter: /\.js$/i,
-      paths: {
-        bowerDirectory: './bower_components',
-      }
-    })
-    .pipe concat 'dependencies.js'
-    .pipe uglify()
-    .pipe gulp.dest "dist/scripts"
-
-# Compile coffee, generate source maps, trigger livereload
-gulp.task 'scripts:prod', ->
-  gulp.src paths.scripts
-    .pipe preprocess context: NODE_ENV: 'production'
-    .pipe do classify
-    .pipe coffee bare: false
-    .pipe uglify()
-    .pipe concat 'app.js'
-    .pipe gulp.dest 'dist/scripts'
-
-#Compile stylus, trigger livereload
-gulp.task 'styles:prod', ->
-  gulp.src paths.styles
-    .pipe stylus()
-    .pipe gulp.dest 'dist/styles'
-
-#Copy images, trigger livereload
-gulp.task 'images:prod', ->
-  gulp.src paths.images
-    .pipe do imagemin
-    .pipe gulp.dest 'dist/images'
-
-# Copy fonts
-gulp.task 'fonts:prod', ->
-  gulp.src paths.fonts
-    .pipe gulp.dest 'dist/fonts'
-
-#Compile Jade, trigger livereload
-gulp.task 'partials:prod', ->
-  gulp.src paths.partials
-    .pipe jade pretty: yes
-    .pipe templateCache('templates', {standalone:true, root: '/partials/'} )
-    .pipe rename(extname: '.js')
-    .pipe uglify()
-    .pipe gulp.dest 'dist/scripts'
-
-#Compile index.jade, inject compiled stylesheets, inject compiled scripts, inject bower packages
-gulp.task 'index:prod', ->
-  gulp.src paths.index
-    .pipe inject(es.merge(
-      gulp.src './dist/styles/**/*.css', read: no
-    ,
-      gulp.src [
-        './dist/scripts/dependencies.js'
-        './dist/scripts/templates.js'
-        './dist/scripts/app.js'
-      ], read: no
-    ), ignorePath: '/dist', addRootSlash: false)
-    .pipe gulp.dest 'dist/'
-
-gulp.task 'compile:prod', ['clean:prod'], (cb) ->
-  runSequence(
-    'concat_bower:prod', 
-    [
-      'scripts:prod', 
-      'styles:prod', 
-      'images:prod', 
-      'fonts:prod'
-    ], 
-    'partials:prod',
-    'index:prod'
-    cb
-  );
-
 gulp.task 'default' , ['server']
-gulp.task 'build' , ['compile:prod']

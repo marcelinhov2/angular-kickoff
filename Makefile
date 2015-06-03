@@ -17,7 +17,7 @@ compile:
 	@$(GU) compile
 
 build:
-	@$(GU) build
+	@$(GU) compile --compress
 
 karma:
 	@$(KA) start tests/karma.conf.js

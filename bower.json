@@ -10,9 +10,7 @@
     "test",
     "tests"
   ],
-  "devDependencies": {
-    
-  },
+  "devDependencies": {},
   "dependencies": {
     "angular": "latest",
     "angular-route": "latest",
@@ -27,5 +25,8 @@
     "angularjs-dropdown-multiselect": "latest",
     "angular-mocks": "latest",
     "angular-scenario": "latest"
+  },
+  "resolutions": {
+    "angular": "1.4.0"
   }
 }
