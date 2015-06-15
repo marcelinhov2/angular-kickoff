@@ -131,4 +131,3 @@ angular-kickoff
 
 ##TODO's
 * Prerender.io
-* Tests

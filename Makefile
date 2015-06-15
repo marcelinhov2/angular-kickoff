@@ -11,13 +11,13 @@ remove_remote:
 	rm -rf .git
 
 server:
-	@$(GU) server
+	@$(GU) up
 
 compile:
 	@$(GU) compile
 
 build:
-	@$(GU) compile --compress
+	@$(GU) build --compress
 
 karma:
 	@$(KA) start tests/karma.conf.js

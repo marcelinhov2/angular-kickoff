@@ -1,5 +1,6 @@
 gulp          = require 'gulp'
 argv          = require('yargs').argv
+cache         = require 'gulp-cached'
 gulpif        = require 'gulp-if'
 open          = require 'open'
 es            = require 'event-stream'
@@ -18,8 +19,10 @@ rename        = require "gulp-rename"
 templateCache = require 'gulp-angular-templatecache'
 runSequence   = require 'run-sequence'
 preprocess    = require 'gulp-preprocess'
+rev           = require 'gulp-rev'
 
 paths =
+  base:     'src/'
   index:    'src/index.jade'
   fonts:    'src/fonts/**/*'
   images:   'src/images/**/*'
@@ -43,20 +46,24 @@ gulp.task "concat_bower", ->
     })
     .pipe(concat( 'dependencies.js') )
     .pipe gulpif(argv.compress, uglify())
+    .pipe gulpif(argv.compress, rev())
     .pipe gulp.dest "#{folder}/scripts"
 
 gulp.task 'scripts', ->
   gulp.src paths.scripts
+    .pipe cache('scripts')
     .pipe preprocess context: NODE_ENV: env
     .pipe do classify
     .pipe coffee bare: false
     .pipe gulpif(argv.compress, uglify())
     .pipe gulpif(argv.compress, concat('app.js'))
+    .pipe gulpif(argv.compress, rev())
     .pipe gulp.dest "#{folder}/scripts"
 
 gulp.task 'styles', ->
   gulp.src paths.styles
     .pipe stylus()
+    .pipe gulpif(argv.compress, rev())
     .pipe gulp.dest "#{folder}/styles"
 
 gulp.task 'styles:reload', ->
@@ -67,11 +74,13 @@ gulp.task 'styles:reload', ->
 
 gulp.task 'images', ->
   gulp.src paths.images
+    .pipe cache('images')
     .pipe gulpif(argv.compress, imagemin())
     .pipe gulp.dest "#{folder}/images"
 
 gulp.task 'fonts', ->
   gulp.src paths.fonts
+    .pipe cache('fonts')
     .pipe gulp.dest "#{folder}/fonts"
 
 gulp.task 'partials', ->
@@ -80,14 +89,15 @@ gulp.task 'partials', ->
     .pipe templateCache('templates', {standalone:true, root: '/partials/'} )
     .pipe rename(extname: '.js')
     .pipe gulpif(argv.compress, uglify())
+    .pipe gulpif(argv.compress, rev())
     .pipe gulp.dest "#{folder}/scripts"
 
 gulp.task 'index', ->
   if(argv.compress)
     scripts = [
-      "./#{folder}/scripts/dependencies.js"
-      "./#{folder}/scripts/templates.js"
-      "./#{folder}/scripts/app.js"
+      "./#{folder}/scripts/dependencies-*.js"
+      "./#{folder}/scripts/templates-*.js"
+      "./#{folder}/scripts/app-*.js"
     ]
   else
     scripts = "./#{folder}/scripts/**/*.js"
@@ -101,7 +111,7 @@ gulp.task 'index', ->
     ), ignorePath: "/#{folder}", addRootSlash: false)
     .pipe gulp.dest "#{folder}/"
 
-gulp.task 'server', ['compile', 'watch'], ->
+gulp.task 'server', ->
   connect.server
     port       : 1337
     root       : "#{folder}"
@@ -109,6 +119,16 @@ gulp.task 'server', ['compile', 'watch'], ->
     fallback   : "#{folder}/index.html"
 
   open 'http://localhost:1337'
+
+gulp.task 'up', (cb) ->
+  runSequence(
+    'clean', 
+    'concat_bower', 
+    'compile', 
+    'watch', 
+    'server' 
+    cb
+  );
 
 gulp.task 'reload', ->
   gulp.src paths.index
@@ -122,9 +142,8 @@ gulp.task 'watch', ->
   gulp.watch paths.images   , ['compile']
   gulp.watch paths.index    , ['compile']
 
-gulp.task 'compile', ['clean'], (cb) ->
+gulp.task 'compile', (cb) ->
   runSequence(
-    'concat_bower', 
     [
       'scripts', 
       'styles', 
@@ -137,4 +156,12 @@ gulp.task 'compile', ['clean'], (cb) ->
     cb
   );
 
-gulp.task 'default' , ['server']
+gulp.task 'build', (cb) ->
+  runSequence(
+    'clean',
+    'concat_bower', 
+    'compile', 
+    cb
+  );
+
+gulp.task 'default' , ['up']
