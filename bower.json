@@ -13,18 +13,11 @@
   "devDependencies": {},
   "dependencies": {
     "angular": "latest",
-    "angular-route": "latest",
-    "angular-loader": "latest",
+    "lodash": "latest",
+    "ui-router": "latest",
     "angular-resource": "latest",
-    "angular-animate": "latest",
     "angular-local-storage": "latest",
-    "angular-cookies": "latest",
-    "angular-bootstrap": "latest",
-    "angular-ui-utils": "latest",
-    "angular-smart-table": "latest",
-    "angularjs-dropdown-multiselect": "latest",
-    "angular-mocks": "latest",
-    "angular-scenario": "latest"
+    "ui-router-extras": "latest"
   },
   "resolutions": {
     "angular": "1.4.0"

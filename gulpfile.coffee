@@ -5,8 +5,7 @@ gulpif        = require 'gulp-if'
 open          = require 'open'
 es            = require 'event-stream'
 coffee        = require 'gulp-coffee'
-jade          = require 'gulp-jade'
-stylus        = require 'gulp-stylus'
+less          = require 'gulp-less'
 concat        = require 'gulp-concat'
 uglify        = require 'gulp-uglify'
 inject        = require 'gulp-inject'
@@ -22,13 +21,14 @@ preprocess    = require 'gulp-preprocess'
 rev           = require 'gulp-rev'
 
 paths =
-  base:     'src/'
-  index:    'src/index.jade'
-  fonts:    'src/fonts/**/*'
-  images:   'src/images/**/*'
-  styles:   'src/styles/**/*.styl'
-  scripts:  'src/scripts/**/*.coffee'
-  partials: 'src/partials/**/*.jade'
+  base:       'src/'
+  index:      'src/index.html'
+  fonts:      'src/fonts/**/*'
+  images:     'src/images/**/*'
+  styles:     'src/styles/**/*.less'
+  base_style: 'src/styles/base.less'
+  scripts:    'src/scripts/**/*.coffee'
+  partials:   'src/partials/**/*.html'
 
 folder = if (argv.compress) then 'dist' else 'www'
 env = if (argv.compress) then 'production' else 'testing'
@@ -61,14 +61,14 @@ gulp.task 'scripts', ->
     .pipe gulp.dest "#{folder}/scripts"
 
 gulp.task 'styles', ->
-  gulp.src paths.styles
-    .pipe stylus()
+  gulp.src paths.base_style
+    .pipe less()
     .pipe gulpif(argv.compress, rev())
     .pipe gulp.dest "#{folder}/styles"
 
 gulp.task 'styles:reload', ->
-  gulp.src paths.styles
-    .pipe stylus()
+  gulp.src paths.base_style
+    .pipe less()
     .pipe gulp.dest "#{folder}/styles"
     .pipe connect.reload()
 
@@ -85,7 +85,6 @@ gulp.task 'fonts', ->
 
 gulp.task 'partials', ->
   gulp.src paths.partials
-    .pipe jade pretty: yes
     .pipe templateCache('templates', {standalone:true, root: '/partials/'} )
     .pipe rename(extname: '.js')
     .pipe gulpif(argv.compress, uglify())
@@ -103,7 +102,6 @@ gulp.task 'index', ->
     scripts = "./#{folder}/scripts/**/*.js"
 
   gulp.src paths.index
-    .pipe jade pretty: yes
     .pipe inject(es.merge(
       gulp.src "./#{folder}/styles/**/*.css", read: no
     ,
