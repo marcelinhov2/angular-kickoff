@@ -34,9 +34,7 @@
     "run-sequence": "latest",
     "rimraf": "latest",
     "gulp-rimraf": "latest",
-    "jade": "latest",
     "open": "latest",
-    "stylus": "latest",
     "yargs": "latest"
   },
   "devDependencies": {
