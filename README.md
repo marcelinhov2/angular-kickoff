@@ -58,6 +58,9 @@ make build
 
 ### Running tests
 With the server running, you can execute ```make karma``` to run your tests. It will instance a new server at port 9876 and you will be able to write your tests with LiveReload.
+```sh
+make karma
+```
 
 ##Directory layout
 
