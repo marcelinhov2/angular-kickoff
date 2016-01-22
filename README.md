@@ -1,9 +1,7 @@
 #Angular Kickoff
 AngularJS application boilerplate for Ng-Classify lovers
 
-__based on:__ [ng-classify](https://github.com/CaryLandholt/ng-classify)
-
-__inspirated in:__ [angular-hipster-seed](https://github.com/t3chnoboy/angular-hipster-seed)
+__inspirated from:__ [angular-hipster-seed](https://github.com/t3chnoboy/angular-hipster-seed)
 
 ##Dependecies
 To use this structure, you will need [NodeJS](https://www.google.com.br/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=installing%20nodejs) and [NPM](https://www.google.com.br/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=installing+npm) installed.
