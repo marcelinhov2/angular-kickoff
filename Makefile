@@ -1,7 +1,6 @@
 BO=node_modules/.bin/bower
 GU=node_modules/.bin/gulp
 KA=node_modules/karma/bin/karma
-PR=node_modules/.bin/protractor
 
 setup:
 	npm install
@@ -22,5 +21,5 @@ build:
 karma:
 	@$(KA) start tests/karma-tests/karma.conf.js
 
-# protractor:
-# 	@$(PR) tests/e2e-tests/protractor-conf.js
+protractor:
+	@$(GU) e2e_tests

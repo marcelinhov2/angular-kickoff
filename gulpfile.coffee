@@ -19,6 +19,7 @@ templateCache = require 'gulp-angular-templatecache'
 runSequence   = require 'run-sequence'
 preprocess    = require 'gulp-preprocess'
 rev           = require 'gulp-rev'
+protractor    = require 'gulp-protractor'
 
 paths =
   base:       'src/'
@@ -29,6 +30,7 @@ paths =
   base_style: 'src/styles/base.less'
   scripts:    'src/scripts/**/*.coffee'
   partials:   'src/partials/**/*.html'
+  e2e_tests:  'tests/e2e-tests/scripts/**/*.js'
 
 folder = if (argv.compress) then 'dist' else 'www'
 env = if (argv.compress) then 'production' else 'testing'
@@ -108,6 +110,15 @@ gulp.task 'index', ->
       gulp.src scripts, read: no
     ), ignorePath: "/#{folder}", addRootSlash: false)
     .pipe gulp.dest "#{folder}/"
+
+gulp.task 'e2e_tests', ->
+  gulp.src paths.e2e_tests
+    .pipe protractor(
+      configFile: './test/e2e-tests/protractor-config.js'
+      args: [
+        '--baseUrl'
+        'http://localhost:1337'
+    ])
 
 gulp.task 'server', ->
   connect.server
