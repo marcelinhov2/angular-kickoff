@@ -38,6 +38,8 @@
     "yargs": "latest"
   },
   "devDependencies": {
+    "gulp-protractor": "latest",
+    "protractor": "latest",
     "karma": "latest",
     "karma-jasmine": "latest",
     "jasmine-core": "latest"
