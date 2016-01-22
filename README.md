@@ -5,6 +5,8 @@ __based on:__ [ng-classify](https://github.com/CaryLandholt/ng-classify)
 
 __inspirated in:__ [angular-hipster-seed](https://github.com/t3chnoboy/angular-hipster-seed)
 
+##Dependecies
+To use this structure, you will need [NodeJS](https://www.google.com.br/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=installing%20nodejs) and [NPM](https://www.google.com.br/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=installing+npm) installed.
 
 ##Features
 * Auto create/delete of src files inside www folder;
@@ -71,9 +73,9 @@ angular-kickoff
     ├── partials             # angular view partials
     │   ├── directives       # partial directives
     │   └── views            # partial views
-    ├── scripts              # coffeescripts ( You can choose your folder structure)
+    ├── scripts              # coffeescripts ( You can choose your folder structure )
     │   ├── main.coffee      # Main File
-    └── styles               # stylus stylesheets
+    └── styles               # stylus stylesheets ( You can choose your folder structure )
         └── base.less        # this file, import all the others files that you create
 ```
 
@@ -85,8 +87,8 @@ angular-kickoff
   ├── index.html          # compiled app layout
   ├── fonts
   ├── images
-  ├── scripts             # compiled scripts
-  │   ├── apṕ.js
+  ├── scripts             # compiled scripts in the same folder/file structure of ```src``` folder
+  │   ├── app.js
   │   ├── templates.js
   │   └── dependencies.js # bower_components compiled files
   └── styles              # compiled stylesheets
