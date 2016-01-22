@@ -1,4 +1,4 @@
-#Angular Kickoff Seed
+#Angular Kickoff
 AngularJS application boilerplate for Ng-Classify lovers
 
 __based on:__ [ng-classify](https://github.com/CaryLandholt/ng-classify)
@@ -8,10 +8,7 @@ __inspirated in:__ [angular-hipster-seed](https://github.com/t3chnoboy/angular-h
 
 ##Features
 * Auto create/delete of src files inside www folder;
-* Jade instead of html;
-* Coffee-Script instead of JS;
 * Ng-Classify for better AngularJs Declarations;
-* Stylus instead of css;
 * Automatic compilation;
 * Livereload without any plugins;
 * Production build with optimizations;
@@ -57,6 +54,10 @@ This command compiles project and optimizes it for production. Output goes to ``
 ```
 make build
 ```
+##Karma tests
+
+### Running tests
+With the server running, you can execute ```make karma``` to run your tests. It will instance a new server at port 9876 and you will be able to write your tests with LiveReload.
 
 ##Directory layout
 
@@ -65,26 +66,15 @@ make build
 ```sh
 angular-kickoff
 └── src
+    ├── index.html           # app layout file (the main jade template file of the app)
     ├── images               # image files
-    ├── index.jade           # app layout file (the main jade template file of the app)
-    ├── partials             # angular view partials (partial jade templates)
+    ├── partials             # angular view partials
     │   ├── directives       # partial directives
     │   └── views            # partial views
-    ├── scripts              # coffeescripts
-    │   ├── main.coffee      # application
-    │   ├── controllers      # application controllers
-    │   ├── directives       # application directives
-    │   ├── factories        # application factories
-    │   ├── filters          # application filters
-    │   └── services         # application services
+    ├── scripts              # coffeescripts ( You can choose your folder structure)
+    │   ├── main.coffee      # Main File
     └── styles               # stylus stylesheets
-        ├── animation.styl   # animation classes ( http://daneden.github.io/animate.css/ )
-        ├── app.styl         # this file, import all the others files that you create
-        ├── colors.styl      # here goes your colors vars
-        ├── fonts.styl       # here goes your font-face declaration
-        ├── mixins.styl      # here goes your mixins
-        ├── reset.styl       # here goes your reset styles ( http://meyerweb.com/eric/tools/css/reset/ )
-        └── transitions.styl # here goes your ng-view transitions ( https://github.com/mgechev/angular-transitions )
+        └── base.less        # this file, import all the others files that you create
 ```
 
 ### Development build
@@ -92,42 +82,29 @@ angular-kickoff
 ```sh
 angular-kickoff
  www                      # development build
-  ├── bower_components
+  ├── index.html          # compiled app layout
   ├── fonts
   ├── images
-  ├── index.html          # compiled app layout
-  ├── partials            # compiled partials
-  │   ├── directives
-  │   └── views
-  ├── scripts             # compiled scripts with source maps
-  │   ├── main.js
-  │   ├── dependencies.js # bower_components compiled files
-  │   ├── controllers
-  │   ├── directives
-  │   ├── factories
-  │   ├── filters
-  │   └── services
-  └── styles               # compiled stylesheets
-      └── app.css
+  ├── scripts             # compiled scripts
+  │   ├── apṕ.js
+  │   ├── templates.js
+  │   └── dependencies.js # bower_components compiled files
+  └── styles              # compiled stylesheets
+      └── base.css
 ```
 
 ###Production build
 
 ```sh
+angular-kickoff
  dist                     # production build
-  ├── bower_components
+  ├── index.html          
   ├── fonts
-  ├── images               # optimized images
-  ├── index.html           # minified app layout
-  ├── partials             # minified partials
-  │   ├── directives
-  │   └── views
-  ├── scripts
-  │   ├── dependencies.js  # minified and concatenated bower_components
-  │   └── main.js          # minified and concatenated javascripts
-  └── styles
-      └── style.css        # minified and concatenated styles
+  ├── images
+  ├── scripts             
+  │   ├── app-{revision}.js
+  │   ├── templates-{revision}.js
+  │   └── dependencies-{revision}.js # bower_components compiled files
+  └── styles              # compiled stylesheets
+      └── base-{revision}.css
 ```
-
-##TODO's
-* Prerender.io
