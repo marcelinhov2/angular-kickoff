@@ -1,6 +1,6 @@
 {
-  "name": "ngSprntr",
-  "version": "2.0.0",
+  "name": "Angular-Kickoff",
+  "version": "1.0.0",
   "license": "MIT",
   "private": true,
   "ignore": [
@@ -17,9 +17,10 @@
     "ui-router": "latest",
     "angular-resource": "latest",
     "angular-local-storage": "latest",
-    "ui-router-extras": "latest"
+    "ui-router-extras": "latest",
+    "angular-mocks": "latest"
   },
   "resolutions": {
-    "angular": "1.4.0"
+    "angular": "1.4.9"
   }
 }

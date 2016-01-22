@@ -4,12 +4,9 @@ module.exports = function(config){
     basePath : '../',
 
     files : [
-      'bower_components/angular/angular.js',
-      'bower_components/angular-route/angular-route.js',
-      'bower_components/angular-mocks/angular-mocks.js',
-      'app/scripts/dependencies.js',
-      'app/scripts/main.js',
-      'app/scripts/**/*.js',
+      'www/scripts/dependencies.js',
+      'www/scripts/main.js',
+      'www/scripts/**/*.js',
       'tests/scripts/**/*.js'
     ],
 
@@ -18,8 +15,8 @@ module.exports = function(config){
     frameworks: ['jasmine'],
 
     plugins : [
-            'karma-jasmine'
-            ],
+      'karma-jasmine'
+    ],
 
   });
 };
