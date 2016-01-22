@@ -1,13 +1,13 @@
 module.exports = function(config){
   config.set({
 
-    basePath : '../',
+    basePath : '../../',
 
     files : [
       'www/scripts/dependencies.js',
       'www/scripts/main.js',
       'www/scripts/**/*.js',
-      'tests/scripts/**/*.js'
+      'tests/karma-tests/scripts/**/*.js'
     ],
 
     autoWatch : true,

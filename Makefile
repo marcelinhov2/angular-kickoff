@@ -20,7 +20,7 @@ build:
 	@$(GU) build --compress
 
 karma:
-	@$(KA) start tests/karma.conf.js
+	@$(KA) start tests/karma-tests/karma.conf.js
 
 # protractor:
-# 	@$(PR) tests/protractor-conf.js
+# 	@$(PR) tests/e2e-tests/protractor-conf.js
